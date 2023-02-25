@@ -7,5 +7,6 @@ const GENESIS_DATA = {
     nonce: 0,
     difficulty: INITIAL_DIFFICULTY,
 };
+const STARTING_BALANCE = 1000;
 
-module.exports = {GENESIS_DATA};
+module.exports = {GENESIS_DATA,STARTING_BALANCE};
