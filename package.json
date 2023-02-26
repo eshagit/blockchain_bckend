@@ -6,12 +6,24 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "type": "module"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "elliptic": "^6.4.1",
+    "express": "^4.16.3",
+    "uuid": "^3.3.2"
   }
 }
