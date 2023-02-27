@@ -1,6 +1,6 @@
 const { json } = require('body-parser');
 const uuid = require('uuid/v1');
-const verifySignature = require('../elliptic');
+const {verifySignature} = require('../elliptic');
 
 class Transaction{
     constructor({senderWallet,recipient,amount}){
@@ -49,6 +49,12 @@ class Transaction{
             console.error(`INvalid signature from ${address}`);
             return false;
         }
+    }
+
+    update({senderWallet,recipient,amount}){
+        this.outputMap[recipient] = amount;
+        this.outputMap[senderWallet.publicKey] = this.outputMap[senderWallet]-amount;
+        this.input = this.createInput({senderWallet,outputMap:this.outputMap})
     }
 };
 
